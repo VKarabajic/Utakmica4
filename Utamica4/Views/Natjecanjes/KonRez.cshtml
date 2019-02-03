@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Utamica4.Models.Natjecanje>
+
+@{
+    ViewBag.Title = "Index";
+}
+@{Html.RenderPartial("../Shared/Navigation");}
+
+
+
+<div style="margin-left:15%;">
+    <h2>Rezultati utakmica u tijeku</h2>
+    </br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("UTAKMICA")
+                </th>
+                <th>
+                    @Html.DisplayName("EKIPA 1")
+                </th>
+                <th>
+                    @Html.DisplayName("EKIPA 2")
+                </th>
+                <th>
+                    @Html.DisplayName("RASPORED ODRŽAVANJA")
+                </th>
+                <th>
+                    @Html.DisplayName("REZULTATI EKIPE 1")
+                </th>
+                <th>
+                    @Html.DisplayName("REZULTATI EKIPE 2")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            
+            if (item.RezultatE1 >= 0 || item.RezultatE2 >= 0)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NazivUtakmice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ekipa1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ekipa2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Raspored)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RezultatE1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RezultatE2)
+                </td>
+                <td>
+                    @Html.ActionLink("Uredi", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalji", "DetailssA", new { id = item.Id }) |
+                    @Html.ActionLink("Obriši", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+            }
+        }
+
+    </table>
+</div>
+
+<style>
+    .table thead th {
+        background-color: #DDEFEF;
+        border: solid 1px #DDEEEE;
+        color: #336B6B;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+    }
+</style>

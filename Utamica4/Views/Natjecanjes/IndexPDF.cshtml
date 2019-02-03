@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Utamica4.Models.Natjecanje>
+
+@{
+    ViewBag.Title = "Convert";
+}
+
+@{Html.RenderPartial("../Shared/Navigation");}
+
+
+
+<div style="margin-left:20%;">
+
+    <h2>Sve Utakmice</h2>
+
+    <p>
+        @Html.ActionLink("Ispiši sve utakmice", "PrintViewToPdf")
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Utakmica")
+                </th>
+                <th>
+                    @Html.DisplayName("Naziv EKIPE 1")
+                </th>
+                <th>
+                    @Html.DisplayName("Naziv EKIPE 2")
+                </th>
+                <th>
+                    @Html.DisplayName("Datum održavanja:")
+                </th>
+                <th>
+                    @Html.DisplayName("Rezultati EKIPE1:")
+                </th>
+                <th>
+                    @Html.DisplayName("Rezultati EKIPE2:")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NazivUtakmice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ekipa1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ekipa2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Raspored)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RezultatE1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RezultatE2)
+                </td>
+                <td>
+                    @Html.ActionLink("Ispiši rezultate", "PrintPartialViewToPdf", new { id = item.Id }) |
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<style>
+    .table thead th {
+        background-color: #DDEFEF;
+        border: solid 1px #DDEEEE;
+        color: #336B6B;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+    }
+</style>

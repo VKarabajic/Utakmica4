@@ -1,0 +1,54 @@
+﻿@model Utamica4.Models.Natjecanje
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@{Html.RenderPartial("../Shared/Navigation");}
+
+<h2>Details</h2>
+
+<div style="margin-left:20%;">
+    <h4>Detalji</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NazivUtakmice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazivUtakmice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ekipa1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ekipa1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ekipa2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ekipa2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Raspored)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Raspored)
+        </dd>
+
+
+    </dl>
+
+    <p>
+        @Html.ActionLink("Uredi", "EditbEZ", new { id = Model.Id }) |
+        @Html.ActionLink("Vraćanje na popis", "Index")
+    </p>
+</div>

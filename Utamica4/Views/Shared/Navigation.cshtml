@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Navigation";
+}
+
+
+
+<ul id="e1-ul">
+    <li><a href="@Url.Action("Index", "Natjecanjes")">Popis utakmica</a></li>
+    <li><a href="@Url.Action("KonRez", "Natjecanjes")">Rezultati utakmica</a></li>
+    <li><a href="@Url.Action("CreateUt", "Natjecanjes")">Dodaj novu utakmicu</a></li>
+    <li><a href="@Url.Action("Create", "Natjecanjes")">Dodaj utakmicu s rezultatima</a></li>
+    <li><a href="@Url.Action("IndexPDF", "Natjecanjes")">Ipis utakmica</a></li>
+</ul>
+
+<style>
+
+    #e1-ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 10%;
+        background-color: #DDEFEF;
+        position: fixed;
+        overflow: auto;
+    }
+
+        #e1-ul li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+            #e1-ul li a.active {
+                background-color: #272727;
+                color: white;
+            }
+
+            #e1-ul li a:hover:not(.active) {
+                background-color: #555;
+                color: white;
+            }
+</style>

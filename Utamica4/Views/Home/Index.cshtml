@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Utamica4.Models.Natjecanje>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div style="margin-left:15%;">
+    <h2>Utakmice koje se održavaju</h2>
+    </br>
+    <table class="zui-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("UTAKMICA")
+                </th>
+                <th>
+                    @Html.DisplayName("RASPORED ODRŽAVANJA")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NazivUtakmice)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Raspored)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<style>
+
+    .zui-table {
+        border: solid 1px #DDEEEE;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font: normal 13px Arial, sans-serif;
+    }
+
+        .zui-table thead th {
+            background-color: #DDEFEF;
+            border: solid 1px #DDEEEE;
+            color: #336B6B;
+            padding: 10px;
+            text-align: left;
+            text-shadow: 1px 1px 1px #fff;
+        }
+
+        .zui-table tbody td {
+            border: solid 1px #DDEEEE;
+            color: #333;
+            padding: 10px;
+            text-shadow: 1px 1px 1px #fff;
+        }
+
+    
+  
+
+</style>

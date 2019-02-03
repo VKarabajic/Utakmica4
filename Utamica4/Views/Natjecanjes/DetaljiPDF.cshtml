@@ -1,0 +1,67 @@
+﻿@model Utamica4.Models.Natjecanje
+
+@{
+    ViewBag.Title = "DetaljiPDF";
+}
+
+<h2>Konačni rezultati za: @Html.DisplayFor(model => model.NazivUtakmice) </h2>
+
+<div>
+    <div style="margin-left:20%;">
+        <h4>
+            Ekipe i rezultati:
+        </h4>
+        <hr />
+        <dl class="dl-horizontal">
+            </br>
+
+            <dt>
+                @Html.DisplayName("EKIPA 1:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ekipa1)
+            </dd>
+
+            </br>
+
+            <dt>
+                @Html.DisplayName("EKIPA 2:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ekipa2)
+            </dd>
+
+            </br>
+            <dt>
+
+                @Html.DisplayName("Datum utakmice:")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Raspored)
+            </dd>
+
+            </br>
+
+            <dt>
+                @Html.DisplayName("Rezultati EKIPE 1:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RezultatE1)
+            </dd>
+
+            </br>
+
+            <dt>
+                @Html.DisplayName("Rezultati EKIPE 2:")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RezultatE2)
+            </dd>
+
+        </dl>
+    </div>
+
